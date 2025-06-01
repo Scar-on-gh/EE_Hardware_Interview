@@ -7,7 +7,9 @@ These are some questions and answers that you should know before going into an i
 4. **Stack math:** What is stack roll and unroll and when does stack gets initialized?
 5. **Hard fault:** The MCU halts. Tell me the first three registers you check and why?
 
+
 ## Question 1 - volatile: Why do we mark a variable volatile, and when does it still fail us? 
+<details><summary><b>Answer to Question 1</b></summary>
 The `volatile` keyword in C/C++ tells the compiler that a variable's value can change unexpectedly, preventing certain optimizations. Here's when and why to use it:
 
 ### Why Mark Variables Volatile
@@ -54,9 +56,10 @@ Modern CPUs can reorder memory operations despite volatile.
 - **Memory-mapped I/O libraries** for hardware access
 
 **Bottom line:** `volatile` is mainly for hardware registers and signal handlers. For multi-threading, use proper synchronization primitives instead.
-
+</details>
 
 ## Question 2 - Interrupt to main loop: How do you pass one byte from an ISR to the main code without a race? 
+<details><summary><b>Answer to Question 2</b></summary>
 To pass one byte from an ISR to main code without a race condition, you need to ensure atomic access. Here are the most common approaches:
 
 ### **1. Volatile Variable (Simple but Limited)**
@@ -119,9 +122,10 @@ int main(void) {
 - For multi-byte data, you'll need additional synchronization (circular buffers, disable interrupts, etc.)
 
 The flag-based approach (#2) is generally recommended as it's explicit about data freshness and works reliably across different architectures.
-
+</details>
 
 ## Question 3 - Power-on path: Walk me from the reset pin to the first line in main(), answer in general/as a hypothetical. Link the reset pin to the first line of any main in any embedded code.
+<details><summary><b>Answer to Question 3</b></summary>
 ### Boot Sequence: Reset Pin to main()
 Here's the general flow from reset pin activation to the first line of main() in embedded systems:
 
@@ -187,9 +191,10 @@ int main(void) {
 - **Boot time** - Entire process typically takes microseconds to milliseconds
 - **Deterministic** - Same sequence every reset for reliable embedded operation
 This sequence ensures the processor transitions from an unknown hardware state to a predictable software environment where your main() function can execute reliably.
+</details>
 
 ## Question 4 - Stack Roll and Unroll: What is stack roll and unroll and when does stack gets initialized?
-
+<details><summary><b>Answer to Question 4</b></summary>
 **Stack Roll (Push)** and **Stack Unroll (Pop)** refer to the fundamental operations of adding and removing data from a stack data structure:
 
 #### Stack Roll (Push)
@@ -249,9 +254,10 @@ value = my_stack.pop()  # Unroll (returns 20)
 - Contains local variables, parameters, and return addresses
 
 The stack follows **LIFO (Last In, First Out)** principle - the last element pushed is the first one popped.
+</details>
 
 ## Question 5 - Hard fault: The MCU halts. Tell me the first three registers you check and why?
-
+<details><summary><b>Answer to Question 5</b></summary>
 When an MCU halts unexpectedly, here are the first three registers I'd check:
 
 ### 1. **Program Counter (PC)**
@@ -272,6 +278,7 @@ When an MCU halts unexpectedly, here are the first three registers I'd check:
 - Can show if the processor is in an exception or fault state
 
 These three registers provide immediate insight into **where** the failure occurred (PC), **memory integrity** (SP), and **processor state** (Status Register), giving you the foundation to diagnose the root cause of the halt.
+</details>
 
 # Source of questions
 1. https://www.linkedin.com/posts/balemarthyvamsi_if-you-cant-answer-these-5-questions-i-activity-7334579430817714176-VOQ-
