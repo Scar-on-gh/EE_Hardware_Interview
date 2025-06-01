@@ -250,7 +250,7 @@ value = my_stack.pop()  # Unroll (returns 20)
 
 The stack follows **LIFO (Last In, First Out)** principle - the last element pushed is the first one popped.
 
-## Question 5 - MCU Halt Debugging: First Three Registers to Check
+## Question 5 - Hard fault: The MCU halts. Tell me the first three registers you check and why?
 
 When an MCU halts unexpectedly, here are the first three registers I'd check:
 
