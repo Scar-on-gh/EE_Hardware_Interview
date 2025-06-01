@@ -1,6 +1,6 @@
 # EE_Hardware_Interview
 These are some questions and answers that you should know before going into an interview.
-## Questions:
+## Questions summary list
 1. **volatile:** Why do we mark a variable volatile, and when does it still fail us?
 2. **Interrupt to main loop:** How do you pass one byte from an ISR to the main code without a race? 
 3. **Power-on path:** Walk me from the reset pin to the first line in main().
