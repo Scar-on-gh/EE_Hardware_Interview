@@ -141,7 +141,7 @@ Here's the general flow from reset pin activation to the first line of main() in
 // ...more vectors
 ```
 
-#### ** 3. Startup/Boot Code**
+#### **3. Startup/Boot Code**
 The reset handler performs critical initialization:
 ```c
 void Reset_Handler(void) {
