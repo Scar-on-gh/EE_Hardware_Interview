@@ -10,6 +10,7 @@ These are some questions and answers that you should know before going into an i
 
 ## Question 1 - volatile: Why do we mark a variable volatile, and when does it still fail us? 
 <details><summary><b>Answer to Question 1</b></summary>
+
 The `volatile` keyword in C/C++ tells the compiler that a variable's value can change unexpectedly, preventing certain optimizations. Here's when and why to use it:
 
 ### Why Mark Variables Volatile
@@ -60,6 +61,7 @@ Modern CPUs can reorder memory operations despite volatile.
 
 ## Question 2 - Interrupt to main loop: How do you pass one byte from an ISR to the main code without a race? 
 <details><summary><b>Answer to Question 2</b></summary>
+
 To pass one byte from an ISR to main code without a race condition, you need to ensure atomic access. Here are the most common approaches:
 
 ### **1. Volatile Variable (Simple but Limited)**
@@ -126,6 +128,7 @@ The flag-based approach (#2) is generally recommended as it's explicit about dat
 
 ## Question 3 - Power-on path: Walk me from the reset pin to the first line in main(), answer in general/as a hypothetical. Link the reset pin to the first line of any main in any embedded code.
 <details><summary><b>Answer to Question 3</b></summary>
+
 ### Boot Sequence: Reset Pin to main()
 Here's the general flow from reset pin activation to the first line of main() in embedded systems:
 
@@ -195,6 +198,7 @@ This sequence ensures the processor transitions from an unknown hardware state t
 
 ## Question 4 - Stack Roll and Unroll: What is stack roll and unroll and when does stack gets initialized?
 <details><summary><b>Answer to Question 4</b></summary>
+
 **Stack Roll (Push)** and **Stack Unroll (Pop)** refer to the fundamental operations of adding and removing data from a stack data structure:
 
 #### Stack Roll (Push)
@@ -258,6 +262,7 @@ The stack follows **LIFO (Last In, First Out)** principle - the last element pus
 
 ## Question 5 - Hard fault: The MCU halts. Tell me the first three registers you check and why?
 <details><summary><b>Answer to Question 5</b></summary>
+
 When an MCU halts unexpectedly, here are the first three registers I'd check:
 
 ### 1. **Program Counter (PC)**
